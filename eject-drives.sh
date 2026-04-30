@@ -9,7 +9,7 @@ DRIVES=("Media" "Archives")
 FAILED=()
 
 for drive in "${DRIVES[@]}"; do
-  if diskutil eject "/Volumes/$drive" 2>/dev/null; then
+  if sudo /usr/sbin/diskutil eject "/Volumes/$drive" 2>/dev/null; then
     echo "✓ Ejected: $drive"
   else
     FAILED+=("$drive")

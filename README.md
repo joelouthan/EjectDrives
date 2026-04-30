@@ -47,10 +47,8 @@ This creates `~/Applications/EjectDrives.app` that you can wire to Stream Deck.
 
 Or manually using `osacompile`:
 ```bash
-osacompile -o ~/Applications/EjectDrives.app -e 'do shell script "/path/to/eject-drives.sh > /tmp/eject.log 2>&1" with administrator privileges'
+osacompile -o ~/Applications/EjectDrives.app -e 'do shell script "/bin/zsh /path/to/eject-drives.sh > /tmp/eject.log 2>&1"'
 ```
-
-**Note:** The first run will prompt for your admin password. After that, you can set up passwordless ejects (see step 4).
 
 ### 4. Optional: Passwordless Ejects (Recommended)
 
