@@ -35,7 +35,7 @@ ls /Volumes
 chmod +x eject-drives.sh
 ```
 
-### 3. Build the Stream Deck Launcher (Optional)
+### 3. Build the Stream Deck Launcher
 
 If you want a Stream Deck button (recommended), build the macOS app launcher:
 
@@ -47,7 +47,24 @@ This creates `~/Applications/EjectDrives.app` that you can wire to Stream Deck.
 
 Or manually using `osacompile`:
 ```bash
-osacompile -o ~/Applications/EjectDrives.app -e 'do shell script "/path/to/eject-drives.sh > /tmp/eject.log 2>&1 &"'
+osacompile -o ~/Applications/EjectDrives.app -e 'do shell script "/path/to/eject-drives.sh > /tmp/eject.log 2>&1" with administrator privileges'
+```
+
+**Note:** The first run will prompt for your admin password. After that, you can set up passwordless ejects (see step 4).
+
+### 4. Optional: Passwordless Ejects (Recommended)
+
+To skip the password prompt every time, allow your user to run `diskutil eject` without a password:
+
+```bash
+echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/sbin/diskutil eject *" | sudo tee /etc/sudoers.d/diskutil-eject > /dev/null
+```
+
+Enter your password when prompted. After this, the Stream Deck button will eject drives instantly with zero prompts.
+
+Or use `make setup-sudoers`:
+```bash
+make setup-sudoers
 ```
 
 ## Usage
