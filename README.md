@@ -2,6 +2,11 @@
 
 A simple macOS script to eject multiple external drives with a single Stream Deck button press.
 
+<figure>
+  <img src="soundwave-tapes-animated.gif" alt="Soundwave ejecting ALL his cassettes">
+  <figcaption style="font-size: 0.85em;">Laserbeak, Ravage, Rumble, Frenzy, Buzzsaw, Ratbat--Eject, Transform & DESTROY!</figcaption>
+</figure>
+
 ## Features
 
 - Eject multiple external drives by name
