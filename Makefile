@@ -7,7 +7,7 @@ SUDO_RULE := "/etc/sudoers.d/diskutil-eject"
 install: $(SCRIPT_PATH)
 	@chmod +x $(SCRIPT_PATH)
 	@echo "Building launcher app..."
-	@osacompile -o $(APP_PATH) -e 'do shell script "/bin/zsh $(SCRIPT_PATH) > /tmp/eject.log 2>&1"'
+	@osacompile -o $(APP_PATH) -e 'do shell script "/bin/zsh $(SCRIPT_PATH) > ~/tmp/eject.log 2>&1"'
 	@echo "✓ Installed: $(APP_PATH)"
 	@echo "Add to Stream Deck: System → Open → browse to $(APP_PATH)"
 	@echo ""
