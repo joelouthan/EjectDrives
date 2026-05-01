@@ -5,7 +5,7 @@
 *.swp
 *.swo
 *~
-.CLAUDE.md
+CLAUDE.md
 
 # IDE
 .vscode/
