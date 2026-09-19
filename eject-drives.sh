@@ -5,7 +5,7 @@
 # Ejects drives listed in the DRIVES array below.
 # Configure drive names before running.
 
-DRIVES=("Clone" "Archives")
+DRIVES=("Creep" "Archives")
 FAILED=()
 
 for drive in "${DRIVES[@]}"; do
